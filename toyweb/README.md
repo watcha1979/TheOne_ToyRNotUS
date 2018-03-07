@@ -30,11 +30,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+ng serve -o --proxy-config proxy.conf.json
 
 # Docker
 
 docker build -t toyweb:dev .
 
 docker run -d --name toyweb -p 4200:4200 toyweb:dev
+docker run --link toyapi --name toyweb -p 4200:4200 toyweb:dev
+
+docker container prune
 
 docker stop toyweb
+
+docker images
+
+docker image rm toyweb:dev
+
+docker build -t toyapi:dev .
+docker run --name toyapi -p 8080:8080 toyapi:dev
+
+docker image rm toyapi:dev
