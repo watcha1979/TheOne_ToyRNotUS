@@ -8,6 +8,8 @@ public class ToyStoreApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(ToyStoreApplication.class,args);
+
+       SpringApplication.run(ToyStoreApplication.class,args);
+        //MariaDBConnection db = new MariaDBConnection();
     }
 }

@@ -28,7 +28,7 @@ public class HelloWithRepositoryIntegrationTest {
         @Test
         public void shouldReturnHelloSomkiat() throws Exception{
             Person somkiat = new Person("somkiat","pui");
-            given(personRepository.findByFirstName("somkiat")).willReturn(Optional.of(somkiat));
+            //given(personRepository.findByFirstName("somkiat")).willReturn(Optional.of(somkiat));
 
             mockMvc.perform(get("/hello/data/somkiat"))
                     .andExpect(status().is(200))
