@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+
 <div style="text-align:center">
   <h1 *ngFor="let person of persons">
-    Welcome to {{ person.id + ' ' + person.name }}!
+    <div class="well">
+        <span class="glyphicon glyphicon-ok"></span>Hello world {{ person.id + ' ' + person.name }}
+  </div>
   </h1>
 </div>
-<div *ngIf="errorMsg">{{ errorMsg }}</div>
-
+<div *ngIf="errorMsg" class="alert alert-warning">{{ errorMsg }}</div>
