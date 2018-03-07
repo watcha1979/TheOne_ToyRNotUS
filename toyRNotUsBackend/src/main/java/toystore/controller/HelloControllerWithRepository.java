@@ -23,7 +23,8 @@ public class HelloControllerWithRepository {
     @GetMapping("/hello/data/{name}")
     public Hello sayHi(@PathVariable String  name){
 
-        Optional<Person> person = Optional.of(personRepository.findAll().iterator().next());
+//        Optional<Person> person = Optional.of(personRepository.findAll().iterator().next());
+        Optional<Person> person = personRepository.findByFirstName(name);
         System.out.println(person.toString());
 
 
