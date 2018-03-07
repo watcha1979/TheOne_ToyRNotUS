@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import toystore.MariaDBConnection;
 import toystore.domain.Hello;
 import toystore.repository.Person;
 import toystore.repository.PersonRepository;
