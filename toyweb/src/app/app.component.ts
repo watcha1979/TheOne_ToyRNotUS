@@ -13,15 +13,19 @@ export class AppComponent implements OnInit {
   title = 'app';
   firstname = 'mai';
   lastname = 'watchara';
+  errorMsg: string;
 
-  constructor(private personService: PersonServiceService ) {
+  constructor(private personService: PersonServiceService) {
 
   }
 
   ngOnInit() {
     // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     // Add 'implements OnInit' to the class.
-    this.persons = this.personService.getPerson();
+    // this.persons = this.personService.getPerson();
+    this.personService.getPerson2().subscribe(
+      data => this.persons = data,
+      error => this.errorMsg = JSON.stringify(error));
   }
 
 }

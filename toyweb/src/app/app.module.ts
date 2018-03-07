@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PersonServiceService } from './person-service.service';
@@ -11,7 +11,7 @@ import { PersonServiceService } from './person-service.service';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [ PersonServiceService ],
   bootstrap: [AppComponent]

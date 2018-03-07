@@ -1,7 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 *ngFor="let person of persons">
-    Welcome to {{ person.firstname + ' ' + person.lastname }}!
+    Welcome to {{ person.id + ' ' + person.name }}!
   </h1>
 </div>
+<div *ngIf="errorMsg">{{ errorMsg }}</div>
 

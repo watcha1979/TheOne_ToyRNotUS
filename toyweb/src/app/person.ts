@@ -1,4 +1,6 @@
-export class Person {
-    firstname: string;
-    lastname: string;
+export interface Person {
+    id: number;
+    name: string;
+    // firstname: string;
+    // lastname: string;
 }
