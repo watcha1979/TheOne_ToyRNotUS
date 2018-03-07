@@ -1,11 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-
-<div style="text-align:center">
-  <h1 *ngFor="let person of persons">
-    <div class="well">
-        <span class="glyphicon glyphicon-ok"></span>Hello world {{ person.id + ' ' + person.name }}
-  </div>
-  </h1>
+<div class="jumbotron">
+  <h1>Hello world application</h1>
 </div>
+
+<form #helloForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="well">
+    <label for="usr">Please enter name here:</label>
+    <input type="text" [(ngModel)]="name" name="name">
+    <button type="submit" class="btn btn-default">Click</button>
+  </div>
+</form>
+
+<div *ngIf="hello" class ="alert alert-info">
+  Result: {{hello.message}}
+</div>
+
 <div *ngIf="errorMsg" class="alert alert-warning">{{ errorMsg }}</div>

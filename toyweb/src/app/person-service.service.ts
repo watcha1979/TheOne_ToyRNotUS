@@ -1,3 +1,4 @@
+import { Hello } from './hello';
 import { environment } from './../environments/environment';
 import { Person } from './person';
 import { Injectable } from '@angular/core';
@@ -14,7 +15,7 @@ export class PersonServiceService {
         {id: 2, name: 'shuharit'} ];
     }
 
-    public getPerson2(): Observable<Person[]> {
-        return this.http.get<Person[]>(environment.apiurl + '/person');
+    public getPerson2(param: string): Observable<Hello> {
+        return this.http.get<Hello>(environment.apiurl + '/' + param);
     }
 }
