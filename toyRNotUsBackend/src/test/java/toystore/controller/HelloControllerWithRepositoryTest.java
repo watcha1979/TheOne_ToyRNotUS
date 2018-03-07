@@ -28,7 +28,7 @@ public class HelloControllerWithRepositoryTest {
     @Test
     public void shouldReturnHelloSomkiat() {
         Person somkiat = new Person("somkiat","pui");
-        //given(personRepository.findByFirstName("somkiat")).willReturn(Optional.of(somkiat));
+        given(personRepository.findByFirstName("somkiat")).willReturn(Optional.of(somkiat));
 
         Hello hello = controller.sayHi("somkiat");
         assertEquals("Hello somkiat", hello.getMessage());

@@ -22,10 +22,10 @@ public class PersonRepositoryTest {
         Person somkiat = new Person("somkiat", "pui");
         personRepository.save(somkiat);
 
-        //Optional<Person> person = personRepository.findByFirstName("somkiat");
+        Optional<Person> person = personRepository.findByFirstName("somkiat");
 
-        //assertEquals("somkiat", person.get().getFirstName());
-        //assertEquals("pui", person.get().getLastName());
+        assertEquals("somkiat", person.get().getFirstName());
+        assertEquals("pui", person.get().getLastName());
     }
 
     @After

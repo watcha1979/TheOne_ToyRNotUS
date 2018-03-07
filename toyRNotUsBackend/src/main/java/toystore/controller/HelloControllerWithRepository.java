@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import toystore.MariaDBConnection;
 import toystore.domain.Hello;
 import toystore.repository.Person;
 import toystore.repository.PersonRepository;
@@ -24,7 +23,8 @@ public class HelloControllerWithRepository {
     @GetMapping("/hello/data/{name}")
     public Hello sayHi(@PathVariable String  name){
 
-        Optional<Person> person = Optional.of(personRepository.findAll().iterator().next());
+//        Optional<Person> person = Optional.of(personRepository.findAll().iterator().next());
+        Optional<Person> person = personRepository.findByFirstName(name);
         System.out.println(person.toString());
 
 
