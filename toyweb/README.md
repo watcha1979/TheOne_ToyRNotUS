@@ -1,5 +1,9 @@
 # Toyweb
 
+## Run with enable backend call
+ng serve --open --proxy-config proxy.conf.json
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
 
 ## Development server
