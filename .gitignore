@@ -59,4 +59,5 @@ typings/
 
 .idea/
 /*.iml
+/target/*
 
