@@ -60,7 +60,6 @@ typings/
 .idea/
 /*.iml
 /target/*
-/data/*
 /.idea/*
 toystore.iml
 
