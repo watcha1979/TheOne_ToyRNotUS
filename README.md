@@ -16,3 +16,4 @@ docker run -p 9090 prom/prometheus
 
 >localhost:9090
 
+docker run -d -p 3000:3000 grafana/grafana
