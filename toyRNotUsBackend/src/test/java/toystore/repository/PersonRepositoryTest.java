@@ -3,10 +3,12 @@ package toystore.repository;
 import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import toystore.IntegrationTests;
 
 import java.util.Optional;
 
@@ -18,7 +20,7 @@ public class PersonRepositoryTest {
     @Autowired
     private PersonRepository personRepository;
 
-    @Ignore
+    @Category(IntegrationTests.class)
     @Test
     public void findByFirstName() throws Exception{
         Person somkiat = new Person("somkiat", "pui");

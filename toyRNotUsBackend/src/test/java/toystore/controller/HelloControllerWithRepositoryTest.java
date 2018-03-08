@@ -2,7 +2,9 @@ package toystore.controller;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.mockito.Mock;
+import toystore.UnitTests;
 import toystore.domain.Hello;
 import toystore.repository.Person;
 import toystore.repository.PersonRepository;
@@ -25,6 +27,8 @@ public class HelloControllerWithRepositoryTest {
         initMocks(this);
         controller = new HelloControllerWithRepository(personRepository);
     }
+
+    @Category(UnitTests.class)
     @Test
     public void shouldReturnHelloSomkiat() {
         Person somkiat = new Person("somkiat","pui");
