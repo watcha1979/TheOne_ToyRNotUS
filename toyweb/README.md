@@ -36,7 +36,6 @@ ng serve -o --proxy-config proxy.conf.json
 
 docker build -t toyweb:dev .
 
-docker run -d --name toyweb -p 4200:4200 toyweb:dev
 docker run --link toyapi --name toyweb -p 4200:4200 toyweb:dev
 
 docker container prune
