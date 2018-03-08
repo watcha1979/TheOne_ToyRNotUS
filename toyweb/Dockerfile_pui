@@ -1,0 +1,10 @@
+FROM pivotalpa/angular-cli as builder
+WORKDIR /ws
+COPY ./package.json /ws/package.json
+RUN npm install
+COPY . /ws
+RUN ng build
+
+FROM nginx:1.13.9-alpine
+COPY --from=builder /ws/dist /usr/share/nginx/html
+COPY --from=builder /ws/nginx.conf /etc/nginx/nginx.conf

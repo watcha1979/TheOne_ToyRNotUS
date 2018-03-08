@@ -1,0 +1,25 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./toyweb
+      dockerfile: Dockerfile_pui
+    ports:
+      - "80:80"
+    links:
+      - backend
+
+  backend:
+    build: ./toyRNotUsBackend
+    links:
+      - mariadb:hellomariadb
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:10.3.5
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=Hello
+      - MYSQL_ROOT_PASSWORD=password
