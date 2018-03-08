@@ -9,3 +9,10 @@ docker exec -it hellomariadb2 mysql -u root -p
 
 # View console output
 docker logs <docker name>
+
+# Docker Prometheus
+
+docker run -p 9090 prom/prometheus
+
+>localhost:9090
+
