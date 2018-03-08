@@ -6,3 +6,6 @@ docker container run --link hellomariadb --name toyapi -d -v $(pwd)/toyRNotUsBac
 
 # Use mysql client in docker image
 docker exec -it hellomariadb2 mysql -u root -p
+
+# View console output
+docker logs <docker name>
