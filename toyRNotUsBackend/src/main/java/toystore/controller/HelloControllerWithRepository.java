@@ -1,9 +1,8 @@
 package toystore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 import toystore.domain.Hello;
 import toystore.repository.Person;
 import toystore.repository.PersonRepository;
@@ -42,5 +41,16 @@ public class HelloControllerWithRepository {
 
         return "123";
 
+    }
+
+    @GetMapping("/hello/create")
+    public String createPerson(
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "lastname") String lastname){
+
+        Person person = new Person(name,lastname);
+        personRepository.save(person);
+
+        return "created";
     }
 }
